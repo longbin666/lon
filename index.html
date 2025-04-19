@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生信息登记系统</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="date"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .radio-group, .checkbox-group {
+            margin-top: 5px;
+        }
+        .radio-option, .checkbox-option {
+            margin-right: 15px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .required:after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>学生信息登记表</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="studentId" class="required">学号</label>
+                <input type="text" id="studentId" name="studentId" required placeholder="请输入您的学号">
+            </div>
+            
+            <div class="form-group">
+                <label for="name" class="required">姓名</label>
+                <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+            </div>
+            
+            <div class="form-group">
+                <label for="gender" class="required">性别</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="gender" value="male" required> 男</label>
+                    <label class="radio-option"><input type="radio" name="gender" value="female"> 女</label>
+                    <label class="radio-option"><input type="radio" name="gender" value="other"> 其他</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="birthdate">出生日期</label>
+                <input type="date" id="birthdate" name="birthdate">
+            </div>
+            
+            <div class="form-group">
+                <label for="college">学院</label>
+                <select id="college" name="college">
+                    <option value="">请选择学院</option>
+                    <option value="computer">计算机学院</option>
+                    <option value="business">商学院</option>
+                    <option value="art">艺术学院</option>
+                    <option value="engineering">工程学院</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="major">专业</label>
+                <input type="text" id="major" name="major" placeholder="请输入您的专业">
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="required">电子邮箱</label>
+                <input type="email" id="email" name="email" required placeholder="example@school.edu">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">手机号码</label>
+                <input type="text" id="phone" name="phone" placeholder="请输入11位手机号码">
+            </div>
+            
+            <div class="form-group">
+                <label for="hobbies">兴趣爱好</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-option"><input type="checkbox" name="hobbies" value="sports"> 运动</label>
+                    <label class="checkbox-option"><input type="checkbox" name="hobbies" value="music"> 音乐</label>
+                    <label class="checkbox-option"><input type="checkbox" name="hobbies" value="reading"> 阅读</label>
+                    <label class="checkbox-option"><input type="checkbox" name="hobbies" value="travel"> 旅游</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="bio">个人简介</label>
+                <textarea id="bio" name="bio" placeholder="请简要介绍一下自己..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="required">设置密码</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword" class="required">确认密码</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            
+            <button type="submit">提交信息</button>
+        </form>
+    </div>
+</body>
+</html>
